@@ -12,6 +12,7 @@ const config: Config = {
   projectName: "splitmo-api-docs",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
+  trailingSlash: false,
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
