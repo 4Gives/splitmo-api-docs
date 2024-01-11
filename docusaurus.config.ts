@@ -2,14 +2,17 @@ import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
+const organizationName = "4Gives";
+const projectName = "splitmo-api-docs";
+
 const config: Config = {
   title: "Developer Portal",
   tagline: "API Documentation for Splitmo Checkout",
   favicon: "img/logo.jpg",
-  url: "https://developers.splitmo.com",
-  baseUrl: "/",
-  organizationName: "4gives",
-  projectName: "splitmo-api-docs",
+  url: `https://${organizationName}.github.io`,
+  baseUrl: `/${projectName}/`,
+  organizationName,
+  projectName,
   onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
   trailingSlash: false,
