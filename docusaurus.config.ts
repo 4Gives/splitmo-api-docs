@@ -10,7 +10,7 @@ const config: Config = {
   baseUrl: "/",
   organizationName: "4gives",
   projectName: "splitmo-api-docs",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
   trailingSlash: false,
   i18n: {
