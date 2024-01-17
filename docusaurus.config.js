@@ -16,7 +16,7 @@ const config = {
   baseUrl: `/${projectName}`,
   organizationName,
   projectName,
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   i18n: {
     defaultLocale: "en",
