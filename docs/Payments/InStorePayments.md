@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+title: "In-Store Payments"
 ---
 
 ### Low - Code Solution for your physical store
