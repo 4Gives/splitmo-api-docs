@@ -1,13 +1,13 @@
 openapi: 3.0.0
 servers:
   - description: 4Gives Server
-    url: https://v2.4gives.com
+    url: https://app.splitmo.co
   - description: Local Server
     url: http://localhost:8000
 info:
   description: |
-    Splitmo's Checkout API allows you to create a powerful checkout experience without having to build your own. 
-    You can now streamline your payments integration using our pre-built user-friendly hosted checkout page. 
+    Splitmo's Checkout API allows you to create a powerful checkout experience without having to build your own.
+    You can now streamline your payments integration using our pre-built user-friendly hosted checkout page.
     We have simplified the checkout process for customers while ensuring a secure digital payment experience.
   version: "1.0.0"
   title: Splitmo API
@@ -24,7 +24,7 @@ components:
     Customer:
       type: object
       description: ""
-      required: 
+      required:
       - first_name
       - last_name
       - email
@@ -50,7 +50,7 @@ components:
     BillingDetails:
       type: object
       description: "Merchant can pre-fill customer's billing details. If not supplied, customer will be asked to fill up billing details during splitmo checkout."
-      required: 
+      required:
       - full_address
       - city
       - zip_code
@@ -71,7 +71,7 @@ components:
     RedirectUrls:
       type: object
       description: "Merchant can supply a redirect URL after a success or failed transaction."
-      required: 
+      required:
       - success_url
       - failure_url
       - cancel_url
@@ -90,7 +90,7 @@ components:
           example: "https://yoursite.com/?status=canceled"
     Transaction:
       type: object
-      required: 
+      required:
       - external_uuid
       - amount
       - customer
@@ -157,7 +157,7 @@ components:
           format: url
         results:
           type: array
-          items: 
+          items:
             $ref: '#/components/schemas/Transaction'
 tags:
   - name: Checkout
@@ -180,7 +180,7 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: 
+            application/json:
               schema:
                 $ref: "#/components/schemas/Transaction"
     get:
@@ -222,6 +222,5 @@ paths:
           description: Successful response
           content:
             application/json:
-              schema: 
+              schema:
                 $ref: '#/components/schemas/Transaction'
-                
