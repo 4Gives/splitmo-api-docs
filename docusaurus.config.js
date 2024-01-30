@@ -95,7 +95,7 @@ const config = {
             position: "right",
           },
           {
-            href: "https://v2.4gives.com",
+            href: "https://app.splitmo.co",
             label: "Console",
             position: "right",
           },
@@ -106,7 +106,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-    themes: ["docusaurus-theme-openapi-docs"]
+  themes: ["docusaurus-theme-openapi-docs"]
 };
 
 module.exports = config;
