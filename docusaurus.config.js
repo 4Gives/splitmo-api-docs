@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 const organizationName = "4Gives";
 const projectName = "splitmo-api-docs";
-const baseUrl = process.env.BASE_URL || projectName;
+const baseUrl = process.env.BASE_URL || `/${projectName}`;
 const domain = process.env.DOMAIN || `https://${organizationName}.github.io`
 
 
@@ -16,7 +16,7 @@ const config = {
   tagline: "API Documentation for Splitmo Checkout",
   favicon: "img/logo.jpg",
   url: domain,
-  baseUrl: `/${baseUrl}`,
+  baseUrl: baseUrl,
   organizationName,
   projectName,
   onBrokenLinks: "throw",
