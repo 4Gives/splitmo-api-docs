@@ -6,8 +6,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 const organizationName = "4Gives";
 const projectName = "splitmo-api-docs";
-const baseUrl = process.env.baseUrl || projectName;
-const domain = process.env.domain || `https://${organizationName}.github.io`
+const baseUrl = process.env.BASE_URL || projectName;
+const domain = process.env.DOMAIN || `https://${organizationName}.github.io`
 
 
 /** @type {import('@docusaurus/types').Config} */
