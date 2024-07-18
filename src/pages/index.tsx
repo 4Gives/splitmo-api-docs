@@ -37,7 +37,12 @@ export default function Home(): JSX.Element {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <div className="container padding-vert--lg">
+          <center>
+            <h2>Empower Your Business with Seamless and Versatile Payment Solutions</h2>
+          </center>
+          <HomepageFeatures />
+        </div>
       </main>
     </Layout>
   );

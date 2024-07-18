@@ -1,0 +1,60 @@
+# WooCommerce Integration
+
+Splitmo's low-code plugin for WordPress WooCommerce makes it incredibly easy to integrate our payment gateway into your online store. You don't need to be a developer to set it up – simply follow our straightforward installation guide, and you'll be ready to accept payments in no time.
+
+## Configure Splitmo Plugin in Your WooCommerce Store
+
+To get started, your site must have the WooCommerce plugin installed. Refer to a quick guide on [installing WooCommerce](https://woocommerce.com/document/installing-uninstalling-woocommerce/).  
+
+Now that WooCommerce is fully [set up](https://woocommerce.com/document/woocommerce-setup-wizard/), you can proceed.
+
+Download our latest release of the Splitmo Plugin:
+
+<a href="https://github.com/4Gives/splitmo-woocommerce-plugin/releases/latest/download/wc-splitmo-payment-gateway.zip" className="download">
+    <h5>Download Latest WooCommerce Plugin</h5>
+    <span>wc-splitmo-payment-gateway.zip</span>
+</a>
+
+## Installing Splitmo Plugin
+
+After downloading our latest plugin release, log in to your WordPress Admin and do the following:
+
+1. Go to: **Plugins > Add New Plugin**.
+2. Click on **Upload Plugin**.
+3. Locate your downloaded **wc-splitmo-payment-gateway.zip**.
+4. Click **Install Now**
+5. Wait for it to install then click on *Activate Plugin* and you’re good to go!
+
+![install-splitmo-plugin](/img/checkout/install-splitmo-plugin.gif)
+
+## Setup Splitmo Plugin
+
+In order for Splimto Plugin to work, you must setup the required credentials. To setup, do the following:
+
+1. [Create Splitmo API Key](/docs/Payments/CheckoutAPI#step-1---create-a-splitmo-api-key).
+2. On your WP-Admin panel go to **WooCommerce > Settings**.
+3. Go to WooCommerce **Payments** tab.
+4. Look for **Splitmo Checkout for WooCommerce**.
+5. Click on **Manage**
+
+![splitmo-settings](/img/checkout/splitmo-settings.gif)
+
+### The Splitmo Settings
+Here explained the different parts of Splitmo settings
+
+| Setting                        | Description                                                                                                             |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| **Enable/Disable**             | Toggle to enable or disable the Splitmo payment gateway.                                                                |
+| **Title**                      | The title of the payment method displayed to customers during checkout.                                                 |
+| **Description**                | A description of the payment method displayed to customers during checkout.                                             |
+| **Live Environment Settings**  | Configuration settings for live transactions. To create live credentials, go to [app.splitmo.co](https://app.splitmo.co/).                                                                 |
+| - **API Public Key**           | Your live environment API public key.                                                                                   |
+| - **API Secret Key**           | Your live environment API secret key.                                                                                   |
+| **Enable Test Mode**           | Toggle to enable or disable test mode. It allows your succeeding transactions to be test transactions only.             |
+| **Test Environment Settings**  | Configuration settings for test transactions. To create test credentials, go to [sandbox.splitmo.co](https://sandbox.splitmo.co/).                                                             |
+| - **API Public Key**           | Your test environment API public key.                                                                                   |
+| - **API Secret Key**           | Your test environment API secret key.                                                                                   |
+
+## You're all set
+![splitmo-wp-checkout](/img/checkout/splitmo-wp-checkout.gif)
+Test your newly installed plugin and start accepting payments with ease!

@@ -1,0 +1,42 @@
+---
+id: get-merchant-config
+title: "Get Merchant Config"
+description: "Get Merchant Config"
+sidebar_label: "Get Merchant Config"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVdtuGzcQ/RWCfWgKaLVSkSejCOK4gREEQQ24QRA4hjDijnaZcEmWF10g6N87w13JsuM0QP1g7ZLnDIcz58zuZYI2yos7+QGD6sAmeT+REVUOOu1ofS+XELW6zKmjt/sD7QaM3tmIRNvL32cz/mkwqqB90s7KC3mblcIYV9mII1hOpHI2IR1AcPDeaAUMr79G5uxlVB32wE9p55GiuOVXVImIPjiPIenhxAZXkE1aML7JBhcD/ESLKWjbEg1t7vlmf76jl09v6d8bfvrwl7w/TGSv7SIFsBEUp7GA3uUhuTEOsZcYOM4Wem9oaT6bzZgJ2//DfI66dib3+HPqkattTGBMT2VcJAx9/E/qS2IR2m0WjQ5UyoWHXY+PUl06ZxDsOSuFjAdiJp349SSMK2dXupUH/ps8afg1JnHEiRFIGWPqXEPbLZY2AmtI1uB1vZ7X/YiPtSqEWrLwwhpDLLp7IikSTOqduAXbLN1W3BYkUXIwtN2l5ONFXcdhexoH+FQ5eZj8KNZNcE0ujfhRONLpo1Bn3rhluQ6KPHPIqbAcgS9UUFxoxsindbvqUH0Td1cByQu2FcfMLm/eife4E9dZN3j/om6civXN0L1YF5bLiVC/xIS+mldVpTgGVlCN+VZU5uob7n4T2goXGgwiOTGgxM7lUA6hkxuKqcHEL1ZyY7VduWccPQT9NYrj4YVe1BU53FlwEN5tMLD71RGMW3KwRqtQbDSpgpY6WPOVibfM2jRDTm5jp1/sZ4qnwArrNoLsjNAbbcesRw1HulbCNpQZInLkUGU7YMXxEq1hqFZ8aGN2onNUqeYhIQ8t0kmfkPNAETWJX680QVKHZ7DgeJKJlQtC5ZgcqTaKTacNCrQx86ihCxdRoGh0q8mfxxzPbk1HUfNZ20M959PZdCYfTHbW+HFS0oTgNtBI1KzIBtdoeAzG1y9bvcZIeuxLwzzdrIcyQi0UrT3vxkcNPek04TbV3oCm7o/q349OvaMxrTnrefHy6NYhvSEkfyu4sIzd70ni+DGYw4GX/8kY+PtBj2sIGpZ8zTsevB0CibFYnORJKVzSx8LzgFiDyZzTd18H9t1pmFy//Zuw8NhuR3sNvxx73AC7O4v8xxveF+xV8ZH0wQV7RftDInlcKSPjp/wbiHFDxnrg+3GF8qUZ+S8cQpBd
+sidebar_class_name: "get api-method"
+info_path: api//splitmo-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get Merchant Config</h1>
+
+<MethodEndpoint method={"get"} path={"/api/v1/merchants/config/"}></MethodEndpoint>
+
+
+
+Get Merchant Config
+
+## Request
+
+<div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Successful response
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"default_schedule_type"} required={false} schemaName={"string"} qualifierMessage={"**Possible values:** [`DI`, `WE`, `BI`, `MO`]"} schema={{"type":"string","enum":["DI","WE","BI","MO"]}}></SchemaItem><SchemaItem collapsible={false} name={"min_transaction_amount"} required={false} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","example":1000}}></SchemaItem><SchemaItem collapsible={false} name={"max_transaction_amount"} required={false} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","example":10000}}></SchemaItem><SchemaItem collapsible={false} name={"max_transaction_volume"} required={false} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","example":100000}}></SchemaItem><SchemaItem collapsible={false} name={"max_installment_terms"} required={false} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","example":4}}></SchemaItem><SchemaItem collapsible={false} name={"allow_direct_payment"} required={false} schemaName={"boolean"} qualifierMessage={undefined} schema={{"type":"boolean","example":true}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"default_schedule_type\": \"DI\",\n  \"min_transaction_amount\": 1000,\n  \"max_transaction_amount\": 10000,\n  \"max_transaction_volume\": 100000,\n  \"max_installment_terms\": 4,\n  \"allow_direct_payment\": true\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
+      

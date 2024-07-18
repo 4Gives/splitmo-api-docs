@@ -12,7 +12,7 @@ This is an API payment integration that provides merchants with a checkout page 
 :::
 
 ## How to start integrating your website to Splitmo Checkout API?
-Generate Checkout link through Splitmo API. The API uses [Basic Authentication](https://www.rfc-editor.org/rfc/rfc7617), follow the steps below to get started.
+Generate Checkout link through Splitmo API. The API uses [Basic Authentication](https://www.rfc-editor.org/rfc/rfc7617), follow the steps below to get started. Splitmo Dashboard will provide public key and secret key as username and password for Basic Authentication.
 
 ### Step 1 - Create a Splitmo API Key
 Create authentication key by going to your Splitmo Merchant Dashboard Settings
@@ -24,7 +24,7 @@ The generated API credentials will only be visible once created. Make sure to st
 
 ### Step 2 - Generate your first Checkout Link
 You are almost ready to create your first checkout link. In generating your checkout link you must be ready with the following:
-* **External UUID** - Reference ID from your end, a random UUID will be generated if not supplied any.
+* **External UUID** - Reference ID from your end.  A random UUID will be generated if not supplied any.
 * **Transaction Amount**
 * **Repayment Term and Schedule Type** - [check the Splitmo Repayment Terms](/docs/Payments/#flexible-repayment-terms)
 * **Billing Details (Optional)** - You can pre-fill customer's billing details. If not supplied, customer will be asked to fill up billing details during splitmo checkout.
@@ -77,7 +77,7 @@ Now let's try creating a **Direct** payment transaction
   "description": "Your Product Details"
 [...]}
 ```
-In this example above, we've created a **Direct (DI)** payment transaction type. As you can see we have not supplied a ```repayment_term``` in the request body. Since it is a direct payment, we won't be needing to supply its ```repayment_term``` since it will default to ```1```.
+In this example above, we've created a **Direct (DI)** payment transaction type. As you can see we have not supplied a ```repayment_term``` in the request body. Since it is a direct payment, we won't be needing to supply its ```repayment_term``` since it will default to ```0```.
 
 :::tip
 You can try creating request by checking our [API Reference Playground](/api/create-transaction)

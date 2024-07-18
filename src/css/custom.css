@@ -82,3 +82,16 @@ a:any-link:hover {
   content: "event";
   background-color: var(--ifm-color-secondary-darkest);
 }
+
+
+.download {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-pagination-nav-border-radius);
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  line-height: var(--ifm-heading-line-height);
+  padding: var(--ifm-global-spacing);
+  margin-bottom: 20px;
+  transition: border-color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
