@@ -46,6 +46,7 @@ components:
         mobile:
           type: string
           description: "Customer's mobile number"
+          example: "09980000000"
           pattern: '(\+63|0)?([.\- ]?9[0-9]{2}[.\- ]?[0-9]{3}[.\- ]?[0-9]{4})'
     BillingDetails:
       type: object
@@ -59,12 +60,16 @@ components:
       properties:
         full_address:
           type: string
+          example: "Rufino cor Leviste Street, Salcedo Village, Makati City, 1227"
         city:
           type: string
+          example: "Makati City"
         zip_code:
           type: string
+          example: "1227"
         region:
           type: string
+          example: "NCR"
         country_code:
           type: string
           default: 'PH'
@@ -88,12 +93,48 @@ components:
           type: string
           format: url
           example: "https://yoursite.com/?status=canceled"
+    PaymentMethod:
+      type: object
+      description: "Payment method used by User"
+      properties:
+        card_type:
+          type: string
+          enum: [Credit, Debit]
+        card_scheme:
+          type: string
+          enum: [MC, V, JCB]
+        last_four:
+          type: string
+          example: "1236"
+    Plan:
+      type: object
+      nullable: true
+      description: "Subscription Plan Details"
+      properties:
+        plan_name:
+          type: string
+          example: "Gym Subscription Monthly"
+        price:
+          type: number
+          format: double
+          example: 1000.00
+        billing_cycle:
+          enum: [MO, WE, BI]
+          type: string
+          example: "MO"
+        short_lead:
+          type: string
+          example: "Monthly Gym Subscription that includes personal trainer"
+        company:
+          type: string
+          example: "Monsters Inc."
     Transaction:
       type: object
       required:
         - external_uuid
         - amount
         - customer
+        - redirect_urls
         - schedule_type
         - repayment_term
         - description
@@ -144,6 +185,76 @@ components:
           type: string
           enum: [INITIATED, FOR_VERIFICATION, FOR_AUTHENTICATION, SUCCESSFUL, FAILED TO CAPTURE, FAILED TO AUTHORIZE, CANCELLED, REFUNDED]
           readOnly: true
+    SubscriptionWrite:
+      type: object
+      required:
+        - plan
+        - customer
+        - redirect_urls
+      properties:
+        customer:
+          $ref: '#/components/schemas/Customer'
+        billing_details:
+          $ref: '#/components/schemas/BillingDetails'
+        redirect_urls:
+          $ref: '#/components/schemas/RedirectUrls'
+        plan:
+          type: string
+          default: "4G-SBP-8F0E03B3"
+    SubscriptionReadInitial:
+      type: object
+      properties:
+        customer:
+          $ref: '#/components/schemas/Customer'
+        billing_details:
+          $ref: '#/components/schemas/BillingDetails'
+        redirect_urls:
+          $ref: '#/components/schemas/RedirectUrls'
+        plan:
+          $ref: '#/components/schemas/Plan'
+        reference_id:
+          type: string
+          example: "4G-SB-AF6A091C"
+          readOnly: true
+        checkout_url:
+          type: string
+          format: url
+          readOnly: true
+          example: "http://sandbox.splitmo.co/portals/example/subscription/4G-SBP-8F0E03B3/checkout/?id=4G-SB-AF6A091C"
+        payment_method:
+          example: null
+          readOnly: true
+        status:
+          type: string
+          enum: [INITIATED, FOR_VERIFICATION, FOR_AUTHENTICATION, SUCCESSFUL, FAILED TO CAPTURE, FAILED TO AUTHORIZE, CANCELLED, REFUNDED]
+          example: "INITIATED"
+    SubscriptionReadPaid:
+      type: object
+      properties:
+        customer:
+          $ref: '#/components/schemas/Customer'
+        billing_details:
+          $ref: '#/components/schemas/BillingDetails'
+        redirect_urls:
+          $ref: '#/components/schemas/RedirectUrls'
+        plan:
+          $ref: '#/components/schemas/Plan'
+        reference_id:
+          type: string
+          example: "4G-SB-AF6A091C"
+          readOnly: true
+        checkout_url:
+          type: string
+          format: url
+          readOnly: true
+          example: "http://sandbox.splitmo.co/portals/example/subscription/4G-SBP-8F0E03B3/checkout/?id=4G-SB-AF6A091C"
+        payment_method:
+          $ref: '#/components/schemas/PaymentMethod'
+          readOnly: true
+        status:
+          type: string
+          enum: [INITIATED, FOR_VERIFICATION, FOR_AUTHENTICATION, SUCCESSFUL, FAILED TO CAPTURE, FAILED TO AUTHORIZE, CANCELLED, REFUNDED]
+          example: "SUCCESSFUL"
     TransactionList:
       type: object
       properties:
@@ -159,6 +270,36 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Transaction'
+    SubscriptionList:
+      type: object
+      properties:
+        count:
+          type: number
+        next:
+          type: string
+          format: url
+        previous:
+          type: string
+          format: url
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubscriptionReadInitial'
+    SubscriptionPlanList:
+      type: object
+      properties:
+        count:
+          type: number
+        next:
+          type: string
+          format: url
+        previous:
+          type: string
+          format: url
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Plan'
     MerchantConfig:
       type: object
       properties:
@@ -210,7 +351,7 @@ paths:
     get:
       tags:
         - Checkout
-      summary: List Transactions
+      summary: Get Paginated List of Transactions
       security:
         - basicAuth: []
       parameters:
@@ -262,3 +403,73 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MerchantConfig'
+  /api/v1/subscriptions/:
+    post:
+      tags:
+        - Subscription
+      summary: Create Subscription
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubscriptionWrite'
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubscriptionReadInitial"
+    get:
+      tags:
+        - Subscription
+      summary: Get Paginated List of Subscriptions
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubscriptionList"
+  /api/v1/subscriptions/plans:
+    get:
+      tags:
+        - Subscription Plans
+      summary: Get Paginated List of Subscription Plans
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: Subscription Plan Response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubscriptionPlanList"
+  /api/v1/subscriptions/{subscription_id}:
+    parameters:
+      - name: subscription_id
+        in: path
+        schema:
+          type: string
+        required: true
+        example: "4G-SB-AF6A091C"
+        description: "Splitmo Reference ID of the Subscription"
+    get:
+      tags:
+        - Subscription
+      summary: Get Subscription Details
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: Subscription Response
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/SubscriptionReadInitial"
+                  - $ref: "#/components/schemas/SubscriptionReadPaid"

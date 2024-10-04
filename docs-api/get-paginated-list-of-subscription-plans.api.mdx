@@ -1,0 +1,42 @@
+---
+id: get-paginated-list-of-subscription-plans
+title: "Get Paginated List of Subscription Plans"
+description: "Get Paginated List of Subscription Plans"
+sidebar_label: "Get Paginated List of Subscription Plans"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVdtu4zYQ/RVi+tAWkC8p+iQURbPpIgjaxRpNF4vCMYIxNba4oUiWQ9oRDP17MZKdVW5N+ySBPHN4hpwzc4CEW4ZyCdd5zTqakIx3amHRMawKYNI5mtRCuTzAGtno85xqKJerblVAJA7eMTGUB/hhPpdPRQ80UD5nVX8cY6AA7V0ilyQKQ7BGo8BmX1hCD8C6pgblL7WBoAS//kI6QQEh+kAxmeFg7fNAcoS53KwpQleAo/vxBqdo3BYK2PjYYIIScrSCC5F2xmf+L9hInG0aQzFGbKEAk6jhl+S6bC2uLUGZYqbizSv6lRIay88SDRbdrcOGXtJJ99gEOQMu20Y9Iv3gXaptO2RqND2/q1Galc8idUR4Np/PuwLWxlrjtre61banIJcbqZwPH6GAz++hgHdXUjOvK/vwUTRw7WO6tYTVv+dxlK2e5ZNqTMo4bXNFrAJF9g6tShGNGx5e+yaga9/k50SR1ZXTU+i6ApJJ/Y68AnTjlfH5svu74SQIwTx+zktKaoFb4zBRpQSn/Ea94K4CGkq1r6CELfVVjeIsmGEws93ZjEchPAvHGKa4o8i9H5/UUbAmNV5do6vW/l5d90go+sItoU4pcDmb8bA95QE+1R664jWuRfRV1r3oV+gwhEdUo55xLf4dKnfUOR5eRBgkoR4F5YCBp9d5UZO+U8uLSJiM26qTsvPFlfqNWnWZTUWr72aV1zxbYNuQSzzro3xO54urbzhRmJxNJhMtHDTByVHvBIOZ3FH7vTJO+VhRVMmrAaVan2N/yEWkilwyaPnG9VVi3Ma/0OkG0m9ZnQ7vw9Fav2ehG5GjCn5PcZOt0icw3QeKhpwmtTeplqUad5Jy8mqdja0GTX7vpjfuL5+VRqec3ytOkbCxxh1Vh+MtKOMSbWPfVFVmoeq3I02EL6nMFCcbObSyrao9S8U+CAq4pemN+0yigxSbJlizMVSpVNMIFr0mZrXxUenMyTdiqX1tLClynMV2ClVfFKQqszUJ7UnjKOvpjYMCpLaH+zybzqdzGDnw68MfRwfqvrlTg0YqsqIdWWmX/MuPW7Mjnmrf9A8WPKcG+5kydM//Y9JHr/xQvInuk3jSOGk3vSUORwMvAYORVM6kuscmFo+fBqvctmAPhzUyfYq262T570xRhu2qgB1GM0yN5aoroCasKPa+v6MWSjjXmoL0jR3a3M+hpzNUzPjQYy7f/wkF4GMPnjw3fIX7NNNcO2L+6Z3sKzGw+sQU5RZ/huIoJB9X+j7yZvwCmfc+Vl/jw3EFulXXdf8A93n9iw==
+sidebar_class_name: "get api-method"
+info_path: api//splitmo-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get Paginated List of Subscription Plans</h1>
+
+<MethodEndpoint method={"get"} path={"/api/v1/subscriptions/plans"}></MethodEndpoint>
+
+
+
+Get Paginated List of Subscription Plans
+
+## Request
+
+<div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Subscription Plan Response
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"count"} required={false} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number"}}></SchemaItem><SchemaItem collapsible={false} name={"next"} required={false} schemaName={"url"} qualifierMessage={undefined} schema={{"type":"string","format":"url"}}></SchemaItem><SchemaItem collapsible={false} name={"previous"} required={false} schemaName={"url"} qualifierMessage={undefined} schema={{"type":"string","format":"url"}}></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><span className={"openapi-schema__container"}><strong className={"openapi-schema__property"}>results</strong><span className={"openapi-schema__name"}> object[]</span></span></summary><div style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={false} name={"plan_name"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","example":"Gym Subscription Monthly"}}></SchemaItem><SchemaItem collapsible={false} name={"price"} required={false} schemaName={"double"} qualifierMessage={undefined} schema={{"type":"number","format":"double","example":1000}}></SchemaItem><SchemaItem collapsible={false} name={"billing_cycle"} required={false} schemaName={"string"} qualifierMessage={"**Possible values:** [`MO`, `WE`, `BI`]"} schema={{"enum":["MO","WE","BI"],"type":"string","example":"MO"}}></SchemaItem><SchemaItem collapsible={false} name={"short_lead"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","example":"Monthly Gym Subscription that includes personal trainer"}}></SchemaItem><SchemaItem collapsible={false} name={"company"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","example":"Monsters Inc."}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"count\": 0,\n  \"next\": \"string\",\n  \"previous\": \"string\",\n  \"results\": [\n    {\n      \"plan_name\": \"Gym Subscription Monthly\",\n      \"price\": 1000,\n      \"billing_cycle\": \"MO\",\n      \"short_lead\": \"Monthly Gym Subscription that includes personal trainer\",\n      \"company\": \"Monsters Inc.\"\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
+      
